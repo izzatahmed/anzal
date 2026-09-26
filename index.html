@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعجاز في الرسم العثماني والأفعال القرآنية</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Traditional Arabic', 'Times New Roman', serif;
+            font-size: 18px;
+            line-height: 1.9;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+        }
+        
+        body[dir="ltr"] {
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 20px;
+            padding-top: 80px;
+        }
+        
+        #langBtn {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 9999;
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            color: white;
+            border: 2px solid white;
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        #langBtn:hover { transform: translateY(-3px); }
+        #langBtn:active { transform: scale(0.95); }
+        
+        header {
+            background: linear-gradient(135deg, #1a5276, #2e86c1, #1a5276);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        header h1 { font-size: 32px; margin-bottom: 15px; }
+        header p { font-size: 20px; opacity: 0.95; }
+        
+        nav {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        nav h2 {
+            color: #1a5276;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #2e86c1;
+            padding-bottom: 10px;
+        }
+        
+        nav ul { list-style: none; columns: 2; column-gap: 25px; }
+        nav ul li { margin: 10px 0; break-inside: avoid; }
+        nav ul li a {
+            color: #2e86c1;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover { background: #e8f4f8; }
+        
+        section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        section h2 {
+            color: #1a5276;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #2e86c1;
+            padding-bottom: 10px;
+        }
+        
+        section h3 { color: #2e86c1; font-size: 22px; margin: 20px 0 12px; }
+        section h4 { color: #34495e; font-size: 19px; margin: 15px 0 10px; }
+        section p { margin-bottom: 12px; text-align: justify; }
+        section ul, section ol { margin: 15px 25px; }
+        section li { margin: 8px 0; }
+        
+        .miracle-box {
+            background: linear-gradient(135deg, #fff3cd, #ffe69c);
+            border-right: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        body[dir="ltr"] .miracle-box { border-right: none; border-left: 5px solid #ffc107; }
+        
+        .quran-verse {
+            background-color: #e8f4f8;
+            border-right: 5px solid #2e86c1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 2;
+        }
+        body[dir="ltr"] .quran-verse { border-right: none; border-left: 5px solid #2e86c1; }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border-right: 5px solid #17a2b8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        body[dir="ltr"] .info-box { border-right: none; border-left: 5px solid #17a2b8; }
+        
+        .success-box {
+            background-color: #d4edda;
+            border-right: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        body[dir="ltr"] .success-box { border-right: none; border-left: 5px solid #28a745; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        table th { background-color: #1a5276; color: white; padding: 12px; text-align: right; font-size: 16px; }
+        body[dir="ltr"] table th { text-align: left; }
+        table td { padding: 10px 12px; border-bottom: 1px solid #e0e0e0; text-align: right; }
+        body[dir="ltr"] table td { text-align: left; }
+        table tr:nth-child(even) { background-color: #f8f9fa; }
+        table tr:hover { background-color: #e8f4f8; }
+        
+        .without-alif {
+            background-color: #ffe69c;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #856404;
+            border: 2px solid #ffc107;
+            display: inline-block;
+        }
+        
+        .with-alif {
+            background-color: #c3e6cb;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #155724;
+            border: 2px solid #28a745;
+            display: inline-block;
+        }
+        
+        .letter-comparison {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        
+        .letter-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 230px;
+        }
+        
+        .letter-box h4 { margin-bottom: 12px; font-size: 18px; }
+        
+        .letter-display {
+            font-size: 42px;
+            font-weight: bold;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .box-without { border: 3px solid #ffc107; background-color: #fff9e6; }
+        .box-with { border: 3px solid #28a745; background-color: #e8f5e9; }
+        
+        .formula { text-align: center; font-size: 18px; font-weight: bold; margin: 12px 0; direction: ltr; }
+        .stat-highlight { text-align: center; font-size: 22px; font-weight: bold; margin: 12px 0; color: #d35400; }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2e86c1;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 2px solid #2e86c1;
+            border-radius: 5px;
+        }
+        .back-to-top:hover { background-color: #2e86c1; color: white; }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #666;
+            font-size: 15px;
+            background: #fff;
+            border-radius: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            .container { padding-top: 70px; }
+            header h1 { font-size: 24px; }
+            header p { font-size: 16px; }
+            section { padding: 20px; }
+            #langBtn { padding: 12px 20px; font-size: 14px; }
+            nav ul { columns: 1; }
+            .letter-comparison { gap: 20px; }
+            .letter-box { min-width: 180px; }
+            .letter-display { font-size: 32px; }
+            table { font-size: 14px; }
+            table th, table td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <button id="langBtn" onclick="switchLang()">🌐 English</button>
+
+    <div class="container">
+        <header>
+            <h1 data-ar="الإعجاز في الرسم العثماني والأفعال القرآنية" data-en="The Miracle of Uthmani Script and Quranic Verbs">الإعجاز في الرسم العثماني والأفعال القرآنية</h1>
+            <p data-ar="التوافق المعجز بين 'أَنزَلْنَا' و'نَزَّلْنَا' والرقمين 1 و 23" data-en="The Miraculous Correspondence between 'Anzalnā' and 'Nazzalnā' and the Numbers 1 and 23">التوافق المعجز بين 'أَنزَلْنَا' و'نَزَّلْنَا' والرقمين 1 و 23</p>
+        </header>
+
+        <nav id="contents">
+            <h2 data-ar="فهرس المحتويات" data-en="Table of Contents">فهرس المحتويات</h2>
+            <ul>
+                <li><a href="#s1" data-ar="١. الإعجاز في حرف واحد" data-en="1. The Miracle in One Letter">١. الإعجاز في حرف واحد</a></li>
+                <li><a href="#s2" data-ar="٢. الإنزال المزدوج للقرآن" data-en="2. The Dual Descent of the Quran">٢. الإنزال المزدوج للقرآن</a></li>
+                <li><a href="#s3" data-ar="٣. التوافق العددي المعجز" data-en="3. The Miraculous Numerical Correspondence">٣. التوافق العددي المعجز</a></li>
+                <li><a href="#s4" data-ar="٤. الآيات المفتاحية" data-en="4. Key Verses">٤. الآيات المفتاحية</a></li>
+                <li><a href="#s5" data-ar="٥. الإعجاز في الرسم العثماني" data-en="5. The Miracle of Uthmani Script">٥. الإعجاز في الرسم العثماني</a></li>
+                <li><a href="#s6" data-ar="٦. الخلاصة النهائية" data-en="6. Final Conclusion">٦. الخلاصة النهائية</a></li>
+            </ul>
+        </nav>
+
+        <!-- القسم 1 -->
+        <section id="s1">
+            <h2 data-ar="١. الإعجاز الحقيقي: حرف واحد يُفرّق بين الإنزالَين" data-en="1. The True Miracle: One Letter Separates Two Descents">١. الإعجاز الحقيقي: حرف واحد يُفرّق بين الإنزالَين</h2>
+            
+            <div class="miracle-box">
+                <p data-ar="كلمتان متتاليتان في آيتين متتابعتين من سورة يوسف، الفرق بينهما حرف واحد فقط (الألف)، لكن هذا الحرف الواحد يُفرّق بين حالتين مختلفتين تماماً للقرآن!" 
+                   data-en="Two consecutive words in two consecutive verses of Surah Yusuf, the difference between them is just one letter (Alif), but this single letter separates two completely different states of the Quran!">
+                    كلمتان متتاليتان في آيتين متتابعتين من سورة يوسف، الفرق بينهما حرف واحد فقط (الألف)، لكن هذا الحرف الواحد يُفرّق بين حالتين مختلفتين تماماً للقرآن!
+                </p>
+            </div>
+            
+            <div class="letter-comparison">
+                <div class="letter-box box-without">
+                    <h4 data-ar="الآية ٢ – الإنزال الجملة" data-en="Verse 2 – All-at-once Descent">الآية ٢ – الإنزال الجملة</h4>
+                    <div class="letter-display without-alif">قُرْءنًا</div>
+                    <p data-ar="بدون ألف" data-en="Without Alif"><strong data-ar="بدون ألف" data-en="Without Alif">بدون ألف</strong></p>
+                    <p data-ar="متناغمة مع الزخرف ٣" data-en="Harmonized with Az-Zukhruf 3">متناغمة مع الزخرف ٣</p>
+                </div>
+                <div class="letter-box box-with">
+                    <h4 data-ar="الآية ٣ – الوحي التدريجي" data-en="Verse 3 – Gradual Revelation">الآية ٣ – الوحي التدريجي</h4>
+                    <div class="letter-display with-alif">الْقُرْآنَ</div>
+                    <p data-ar="بألف" data-en="With Alif"><strong data-ar="بألف" data-en="With Alif">بألف</strong></p>
+                    <p data-ar="متناغمة مع باقي القرآن" data-en="Harmonized with rest of Quran">متناغمة مع باقي القرآن</p>
+                </div>
+            </div>
+            
+            <div class="quran-verse">
+                <p data-ar="﴿إِنَّا أَنزَلْنَاهُ قُرْءنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ﴾" 
+                   data-en="﴿Indeed, We have sent it down as an Arabic Quran that you might understand﴾">
+                    ﴿إِنَّا أَنزَلْنَاهُ <span class="without-alif">قُرْءنًا</span> عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ﴾
+                </p>
+                <small data-ar="يوسف ٢ – الإنزال الأول من اللوح المحفوظ" data-en="Yusuf 2 – First Descent from the Preserved Tablet">يوسف ٢ – الإنزال الأول من اللوح المحفوظ</small>
+            </div>
+            
+            <div class="quran-verse">
+                <p data-ar="﴿نَحْنُ نَقُصُّ عَلَيْكَ أَحْسَنَ الْقَصَصِ بِمَا أَوْحَيْنَا إِلَيْكَ هَٰذَا الْقُرْآنَ﴾" 
+                   data-en="﴿We relate to you the best of stories through Our revelation to you of this Quran﴾">
+                    ﴿نَحْنُ نَقُصُّ عَلَيْكَ أَحْسَنَ الْقَصَصِ بِمَا أَوْحَيْنَا إِلَيْكَ هَٰذَا <span class="with-alif">الْقُرْآنَ</span>﴾
+                </p>
+                <small data-ar="يوسف ٣ – الوحي الثاني التدريجي على الأرض" data-en="Yusuf 3 – Second Gradual Revelation on Earth">يوسف ٣ – الوحي الثاني التدريجي على الأرض</small>
+            </div>
+            
+            <table>
+                <tr>
+                    <th data-ar="العنصر" data-en="Element">العنصر</th>
+                    <th data-ar="الآية ٢" data-en="Verse 2">الآية ٢</th>
+                    <th data-ar="الآية ٣" data-en="Verse 3">الآية ٣</th>
+                </tr>
+                <tr>
+                    <td data-ar="الكلمة" data-en="Word">الكلمة</td>
+                    <td><span class="without-alif">قُرْءنًا</span></td>
+                    <td><span class="with-alif">الْقُرْآنَ</span></td>
+                </tr>
+                <tr>
+                    <td data-ar="الألف" data-en="Alif">الألف</td>
+                    <td data-ar="محذوفة" data-en="Deleted">محذوفة</td>
+                    <td data-ar="مثبتة" data-en="Retained">مثبتة</td>
+                </tr>
+                <tr>
+                    <td data-ar="الفعل" data-en="Verb">الفعل</td>
+                    <td data-ar="أَنزَلْنَا (إنزال جملة)" data-en="Anzalnā (all-at-once)">أَنزَلْنَا (إنزال جملة)</td>
+                    <td data-ar="أَوْحَيْنَا (وحي تدريجي)" data-en="Awhaynā (gradual)">أَوْحَيْنَا (وحي تدريجي)</td>
+                </tr>
+                <tr>
+                    <td data-ar="التناغم" data-en="Harmony">التناغم</td>
+                    <td data-ar="مع الزخرف ٣" data-en="With Az-Zukhruf 3">مع الزخرف ٣</td>
+                    <td data-ar="مع باقي القرآن" data-en="With rest of Quran">مع باقي القرآن</td>
+                </tr>
+            </table>
+            
+            <div class="info-box">
+                <p data-ar="فقط موضعان في القرآن كله كُتبت فيهما كلمة 'قرآن' بدون ألف: يوسف ٢ والزخرف ٣" 
+                   data-en="Only two occurrences in the entire Quran where 'Quran' is written without Alif: Yusuf 2 and Az-Zukhruf 3">
+                    فقط موضعان في القرآن كله كُتبت فيهما كلمة 'قرآن' بدون ألف: يوسف ٢ والزخرف ٣
+                </p>
+            </div>
+            
+            <a href="#contents" class="back-to-top" data-ar="↑ العودة إلى الفهرس" data-en="↑ Back to Contents">↑ العودة إلى الفهرس</a>
+        </section>
+
+        <!-- القسم 2 -->
+        <section id="s2">
+            <h2 data-ar="٢. الإنزال المزدوج للقرآن" data-en="2. The Dual Descent of the Quran">٢. الإنزال المزدوج للقرآن</h2>
+            
+            <table>
+                <tr>
+                    <th data-ar="الإنزال" data-en="Descent">الإنزال</th>
+                    <th data-ar="من" data-en="From">من</th>
+                    <th data-ar="إلى" data-en="To">إلى</th>
+                    <th data-ar="الكيفية" data-en="Manner">الكيفية</th>
+                    <th data-ar="الزمن" data-en="Time">الزمن</th>
+                    <th data-ar="الفعل" data-en="Verb">الفعل</th>
+                </tr>
+                <tr>
+                    <td data-ar="الأول" data-en="First">الأول</td>
+                    <td data-ar="اللوح المحفوظ" data-en="Preserved Tablet">اللوح المحفوظ</td>
+                    <td data-ar="السماء الدنيا" data-en="Lowest Heaven">السماء الدنيا</td>
+                    <td data-ar="جملة واحدة" data-en="All at once">جملة واحدة</td>
+                    <td data-ar="ليلة القدر" data-en="Laylat al-Qadr">ليلة القدر</td>
+                    <td><span class="without-alif">أَنزَلْنَا</span></td>
+                </tr>
+                <tr>
+                    <td data-ar="الثاني" data-en="Second">الثاني</td>
+                    <td data-ar="السماء الدنيا" data-en="Lowest Heaven">السماء الدنيا</td>
+                    <td data-ar="الأرض" data-en="Earth">الأرض</td>
+                    <td data-ar="منجماً تدريجياً" data-en="Gradually">منجماً تدريجياً</td>
+                    <td data-ar="٢٣ سنة" data-en="23 years">٢٣ سنة</td>
+                    <td><span class="with-alif">نَزَّلْنَا</span></td>
+                </tr>
+            </table>
+            
+            <h3 data-ar="الفرق اللغوي الدقيق" data-en="The Precise Linguistic Distinction">الفرق اللغوي الدقيق</h3>
+            
+            <table>
+                <tr>
+                    <th data-ar="الفعل" data-en="Verb">الفعل</th>
+                    <th data-ar="الوزن" data-en="Pattern">الوزن</th>
+                    <th data-ar="الدلالة" data-en="Meaning">الدلالة</th>
+                </tr>
+                <tr>
+                    <td><span class="without-alif">أَنزَلْنَا</span></td>
+                    <td data-ar="أَفعَلَ (إفعال)" data-en="Af'ala (Form IV)">أَفعَلَ (إفعال)</td>
+                    <td data-ar="الإنزال جملة واحدة" data-en="Sending down all at once">الإنزال جملة واحدة</td>
+                </tr>
+                <tr>
+                    <td><span class="with-alif">نَزَّلْنَا</span></td>
+                    <td data-ar="فَعَّلَ (تفعيل)" data-en="Fa''ala (Form II)">فَعَّلَ (تفعيل)</td>
+                    <td data-ar="التنزيل تدريجياً منجماً" data-en="Revealing gradually">التنزيل تدريجياً منجماً</td>
+                </tr>
+            </table>
+            
+            <a href="#contents" class="back-to-top" data-ar="↑ العودة إلى الفهرس" data-en="↑ Back to Contents">↑ العودة إلى الفهرس</a>
+        </section>
+
+        <!-- القسم 3 -->
+        <section id="s3">
+            <h2 data-ar="٣. التوافق العددي المعجز: الرقم ١ والرقم ٢٣" data-en="3. The Miraculous Numerical Correspondence: Number 1 and Number 23">٣. التوافق العددي المعجز: الرقم ١ والرقم ٢٣</h2>
+            
+            <div class="miracle-box">
+                <p data-ar="التوافق العددي بين الفعلين والرقمين ليس مصادفة، بل هو تصميم مقصود يعكس الحكمة الإلهية." 
+                   data-en="The numerical correspondence between the two verbs and the two numbers is not coincidence, but an intentional design reflecting divine wisdom.">
+                    التوافق العددي بين الفعلين والرقمين ليس مصادفة، بل هو تصميم مقصود يعكس الحكمة الإلهية.
+                </p>
+            </div>
+            
+            <table>
+                <tr>
+                    <th data-ar="الفعل" data-en="Verb">الفعل</th>
+                    <th data-ar="الرقم" data-en="Number">الرقم</th>
+                    <th data-ar="عدد المواضع" data-en="Occurrences">عدد المواضع</th>
+                    <th data-ar="الرمزية" data-en="Symbolism">الرمزية</th>
+                </tr>
+                <tr>
+                    <td><span class="without-alif">أَنزَلْنَا</span></td>
+                    <td><strong>١</strong></td>
+                    <td data-ar="١٢ موضعاً" data-en="12 occurrences">١٢ موضعاً</td>
+                    <td data-ar="الوحدة والبداية" data-en="Unity and beginning">الوحدة والبداية</td>
+                </tr>
+                <tr>
+                    <td><span class="with-alif">نَزَّلْنَا</span></td>
+                    <td><strong>٢٣</strong></td>
+                    <td data-ar="٣ مواضع" data-en="3 occurrences">٣ مواضع</td>
+                    <td data-ar="عدد سنوات التنزيل" data-en="Years of revelation">عدد سنوات التنزيل</td>
+                </tr>
+            </table>
+            
+            <h3 data-ar="مواضع 'أَنزَلْنَا' في الآية الأولى (١٢ موضعاً)" data-en="Occurrences of 'Anzalnā' in Verse 1 (12 occurrences)">مواضع 'أَنزَلْنَا' في الآية الأولى (١٢ موضعاً)</h3>
+            
+            <table>
+                <tr>
+                    <th data-ar="#" data-en="#">#</th>
+                    <th data-ar="السورة" data-en="Surah">السورة</th>
+                    <th data-ar="الآية" data-en="Verse">الآية</th>
+                    <th data-ar="النص" data-en="Text">النص</th>
+                </tr>
+                <tr><td>١</td><td data-ar="القدر" data-en="Al-Qadr">القدر</td><td>١</td><td data-ar="﴿إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ﴾" data-en="﴿Indeed, We sent it down during the Night of Decree﴾">﴿إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ﴾</td></tr>
+                <tr><td>٢</td><td data-ar="الكهف" data-en="Al-Kahf">الكهف</td><td>١</td><td data-ar="﴿الْحَمْدُ لِلَّهِ الَّذِي أَنزَلَ عَلَىٰ عَبْدِهِ الْكِتَابَ﴾" data-en="﴿All praise is due to Allah, who sent down upon His Servant the Book⟩">﴿الْحَمْدُ لِلَّهِ الَّذِي أَنزَلَ عَلَىٰ عَبْدِهِ الْكِتَابَ﴾</td></tr>
+                <tr><td>٣</td><td data-ar="الرعد" data-en="Ar-Ra'd">الرعد</td><td>١</td><td data-ar="﴿وَالَّذِي أُنزِلَ إِلَيْكَ مِن رَّبِّكَ الْحَقُّ﴾" data-en="﴿And what has been revealed to you from your Lord is the truth⟩">﴿وَالَّذِي أُنزِلَ إِلَيْكَ مِن رَّبِّكَ الْحَقُّ﴾</td></tr>
+                <tr><td>٤</td><td data-ar="إبراهيم" data-en="Ibrahim">إبراهيم</td><td>١</td><td data-ar="﴿كِتَابٌ أَنزَلْنَاهُ إِلَيْكَ﴾" data-en="﴿A Book which We have revealed to you⟩">﴿كِتَابٌ أَنزَلْنَاهُ إِلَيْكَ﴾</td></tr>
+                <tr><td>٥</td><td data-ar="الأعراف" data-en="Al-A'raf">الأعراف</td><td>٢</td><td data-ar="﴿كِتَابٌ أُنزِلَ إِلَيْكَ﴾" data-en="﴿A Book revealed to you⟩">﴿كِتَابٌ أُنزِلَ إِلَيْكَ﴾</td></tr>
+                <tr><td>٦</td><td data-ar="طه" data-en="Ta-Ha">طه</td><td>٢</td><td data-ar="﴿مَا أَنزَلْنَا عَلَيْكَ الْقُرْآنَ﴾" data-en="﴿We have not sent down to you the Quran⟩">﴿مَا أَنزَلْنَا عَلَيْكَ الْقُرْآنَ﴾</td></tr>
+                <tr><td>٧</td><td data-ar="السجدة" data-en="As-Sajdah">السجدة</td><td>٢</td><td data-ar="﴿تَنزِيلُ الْكِتَابِ﴾" data-en="﴿The revelation of the Book⟩">﴿تَنزِيلُ الْكِتَابِ﴾</td></tr>
+                <tr><td>٨</td><td data-ar="الزمر" data-en="Az-Zumar">الزمر</td><td>٢</td><td data-ar="﴿تَنزِيلُ الْكِتَابِ﴾" data-en="﴿The revelation of the Book⟩">﴿تَنزِيلُ الْكِتَابِ﴾</td></tr>
+                <tr><td>٩</td><td data-ar="غافر" data-en="Ghafir">غافر</td><td>٢</td><td data-ar="﴿تَنزِيلُ الْكِتَابِ﴾" data-en="﴿The revelation of the Book⟩">﴿تَنزِيلُ الْكِتَابِ﴾</td></tr>
+                <tr><td>١٠</td><td data-ar="فصلت" data-en="Fussilat">فصلت</td><td>٢</td><td data-ar="﴿تَنزِيلٌ مِّنَ الرَّحْمَٰنِ الرَّحِيمِ﴾" data-en="﴿A revelation from the Most Merciful⟩">﴿تَنزِيلٌ مِّنَ الرَّحْمَٰنِ الرَّحِيمِ﴾</td></tr>
+                <tr><td>١١</td><td data-ar="الجاثية" data-en="Al-Jathiyah">الجاثية</td><td>٢</td><td data-ar="﴿تَنزِيلُ الْكِتَابِ﴾" data-en="﴿The revelation of the Book⟩">﴿تَنزِيلُ الْكِتَابِ﴾</td></tr>
+                <tr><td>١٢</td><td data-ar="الأحقاف" data-en="Al-Ahqaf">الأحقاف</td><td>٢</td><td data-ar="﴿تَنزِيلُ الْكِتَابِ﴾" data-en="﴿The revelation of the Book⟩">﴿تَنزِيلُ الْكِتَابِ﴾</td></tr>
+            </table>
+            
+            <h3 data-ar="مواضع 'نَزَّلْنَا' في الآية ٢٣ (٣ مواضع)" data-en="Occurrences of 'Nazzalnā' in Verse 23 (3 occurrences)">مواضع 'نَزَّلْنَا' في الآية ٢٣ (٣ مواضع)</h3>
+            
+            <table>
+                <tr>
+                    <th data-ar="#" data-en="#">#</th>
+                    <th data-ar="السورة" data-en="Surah">السورة</th>
+                    <th data-ar="الآية" data-en="Verse">الآية</th>
+                    <th data-ar="النص" data-en="Text">النص</th>
+                </tr>
+                <tr><td>١</td><td data-ar="البقرة" data-en="Al-Baqarah">البقرة</td><td>٢٣</td><td data-ar="﴿وَإِن كُنتُمْ فِي رَيْبٍ مِّمَّا نَزَّلْنَا عَلَىٰ عَبْدِنَا﴾" data-en="﴿And if you are in doubt about what We have sent down upon Our Servant﴾">﴿وَإِن كُنتُمْ فِي رَيْبٍ مِّمَّا نَزَّلْنَا عَلَىٰ عَبْدِنَا﴾</td></tr>
+                <tr><td>٢</td><td data-ar="الزمر" data-en="Az-Zumar">الزمر</td><td>٢٣</td><td data-ar="﴿اللَّهُ نَزَّلَ أَحْسَنَ الْحَدِيثِ كِتَابًا مُّتَشَابِهًا﴾" data-en="﴿Allah has sent down the best statement: a consistent Book⟩">﴿اللَّهُ نَزَّلَ أَحْسَنَ الْحَدِيثِ كِتَابًا مُّتَشَابِهًا﴾</td></tr>
+                <tr><td>٣</td><td data-ar="الإنسان" data-en="Al-Insan">الإنسان</td><td>٢٣</td><td data-ar="﴿إِنَّا نَحْنُ نَزَّلْنَا عَلَيْكَ الْقُرْآنَ تَنزِيلًا﴾" data-en="﴿Indeed, it is We who have sent down to you the Quran progressively⟩">﴿إِنَّا نَحْنُ نَزَّلْنَا عَلَيْكَ الْقُرْآنَ تَنزِيلًا﴾</td></tr>
+            </table>
+            
+            <h3 data-ar="التحليل الإحصائي" data-en="Statistical Analysis">التحليل الإحصائي</h3>
+            
+            <div class="info-box">
+                <p data-ar="الاحتمال المشترك للتوافق العددي:" data-en="Combined Probability of Numerical Correspondence:">الاحتمال المشترك للتوافق العددي:</p>
+                <p class="formula">P = (12/114) × (3/100) = 0.00315 (0.315%)</p>
+                <p class="stat-highlight" data-ar="أقل من ١ في ٣١٧!" data-en="Less than 1 in 317!">أقل من ١ في ٣١٧!</p>
+            </div>
+            
+            <a href="#contents" class="back-to-top" data-ar="↑ العودة إلى الفهرس" data-en="↑ Back to Contents">↑ العودة إلى الفهرس</a>
+        </section>
+
+        <!-- القسم 4 -->
+        <section id="s4">
+            <h2 data-ar="٤. الآيات المفتاحية" data-en="4. Key Verses">٤. الآيات المفتاحية</h2>
+            
+            <h3 data-ar="آل عمران ٣ – الجمع بين الفعلين" data-en="Aal-Imran 3 – Combining Both Verbs">آل عمران ٣ – الجمع بين الفعلين</h3>
+            
+            <div class="quran-verse">
+                <p data-ar="﴿نَزَّلَ عَلَيْكَ الْكِتَابَ بِالْحَقِّ مُصَدِّقًا لِّمَا بَيْنَ يَدَيْهِ وَأَنزَلَ التَّوْرَاةَ وَالْإِنجِيلَ﴾" 
+                   data-en="﴿He has sent down upon you the Book in truth, confirming what was before it. And He revealed the Torah and the Gospel⟩">
+                    ﴿<span class="with-alif">نَزَّلَ</span> عَلَيْكَ الْكِتَابَ بِالْحَقِّ مُصَدِّقًا لِّمَا بَيْنَ يَدَيْهِ وَ<span class="without-alif">أَنزَلَ</span> التَّوْرَاةَ وَالْإِنجِيلَ﴾
+                </p>
+                <small data-ar="آل عمران ٣" data-en="Aal-Imran 3">آل عمران ٣</small>
+            </div>
+            
+            <div class="info-box">
+                <p data-ar="آية واحدة تُميّز بين نوعين من الإنزال: 'نَزَّلَ' للقرآن (تدريجي) و'أَنزَلَ' للتوراة والإنجيل (جملة)!" 
+                   data-en="One verse distinguishes between two types of descent: 'Nazzala' for the Quran (gradual) and 'Anzala' for the Torah and Gospel (all-at-once)!">
+                    آية واحدة تُميّز بين نوعين من الإنزال: 'نَزَّلَ' للقرآن (تدريجي) و'أَنزَلَ' للتوراة والإنجيل (جملة)!
+                </p>
+            </div>
+            
+            <h3 data-ar="الأنعام ١١٤ – الكتاب المفصل في الآية الأخيرة" data-en="Al-An'am 114 – The Detailed Book in the Last Verse">الأنعام ١١٤ – الكتاب المفصل في الآية الأخيرة</h3>
+            
+            <div class="quran-verse">
+                <p data-ar="﴿أَفَغَيْرَ اللَّهِ أَبْتَغِي حَكَمًا وَهُوَ الَّذِي أَنزَلَ إِلَيْكُمُ الْكِتَابَ مُفَصَّلًا﴾" 
+                   data-en="﴿Then is it other than Allah I should seek as judge while it is He who has revealed to you the Book explained in detail?﴾">
+                    ﴿أَفَغَيْرَ اللَّهِ أَبْتَغِي حَكَمًا وَهُوَ الَّذِي <span class="without-alif">أَنزَلَ</span> إِلَيْكُمُ الْكِتَابَ مُفَصَّلًا﴾
+                </p>
+                <small data-ar="الأنعام ١١٤ – الرقم ١١٤ = عدد سور القرآن" data-en="Al-An'am 114 – Number 114 = Number of Quranic Surahs">الأنعام ١١٤ – الرقم ١١٤ = عدد سور القرآن</small>
+            </div>
+            
+            <h3 data-ar="الرعد وإبراهيم – الفعل في الآية الأولى" data-en="Ar-Ra'd and Ibrahim – The Verb in Verse 1">الرعد وإبراهيم – الفعل في الآية الأولى</h3>
+            
+            <table>
+                <tr>
+                    <th data-ar="السورة" data-en="Surah">السورة</th>
+                    <th data-ar="الآية" data-en="Verse">الآية</th>
+                    <th data-ar="الفعل" data-en="Verb">الفعل</th>
+                    <th data-ar="الصيغة" data-en="Form">الصيغة</th>
+                </tr>
+                <tr>
+                    <td data-ar="الرعد (١٣)" data-en="Ar-Ra'd (13)">الرعد (١٣)</td>
+                    <td>١</td>
+                    <td><span class="without-alif">أُنزِلَ</span></td>
+                    <td data-ar="مبني للمجهول (الميزان النظري)" data-en="Passive voice (theoretical balance)">مبني للمجهول (الميزان النظري)</td>
+                </tr>
+                <tr>
+                    <td data-ar="إبراهيم (١٤)" data-en="Ibrahim (14)">إبراهيم (١٤)</td>
+                    <td>١</td>
+                    <td><span class="without-alif">أَنزَلْنَاهُ</span></td>
+                    <td data-ar="مبني للمعلوم (التطبيق الرسالي)" data-en="Active voice (prophetic application)">مبني للمعلوم (التطبيق الرسالي)</td>
+                </tr>
+            </table>
+            
+            <a href="#contents" class="back-to-top" data-ar="↑ العودة إلى الفهرس" data-en="↑ Back to Contents">↑ العودة إلى الفهرس</a>
+        </section>
+
+        <!-- القسم 5 -->
+        <section id="s5">
+            <h2 data-ar="٥. الإعجاز في الرسم العثماني" data-en="5. The Miracle of Uthmani Script">٥. الإعجاز في الرسم العثماني</h2>
+            
+            <h3 data-ar="حذف الألف من 'تبارك' في الملك مقابل الفرقان" data-en="Deletion of Alif from 'Tabarak' in Al-Mulk vs. Al-Furqan">حذف الألف من 'تبارك' في الملك مقابل الفرقان</h3>
+            
+            <table>
+                <tr>
+                    <th data-ar="السورة" data-en="Surah">السورة</th>
+                    <th data-ar="الكلمة" data-en="Word">الكلمة</th>
+                    <th data-ar="الألف" data-en="Alif">الألف</th>
+                    <th data-ar="الدلالة" data-en="Significance">الدلالة</th>
+                </tr>
+                <tr>
+                    <td data-ar="الفرقان" data-en="Al-Furqan">الفرقان</td>
+                    <td>تَبَٰرَكَ</td>
+                    <td data-ar="مثبتة" data-en="Retained">مثبتة</td>
+                    <td data-ar="التفريق والتفصيل (الاتجاه النازل)" data-en="Differentiation and detailing (descending direction)">التفريق والتفصيل (الاتجاه النازل)</td>
+                </tr>
+                <tr>
+                    <td data-ar="الملك" data-en="Al-Mulk">الملك</td>
+                    <td>تَبٰرَكَ</td>
+                    <td data-ar="محذوفة" data-en="Deleted">محذوفة</td>
+                    <td data-ar="الجمع والقبض (الاتجاه المطلق)" data-en="Collection and contraction (absolute direction)">الجمع والقبض (الاتجاه المطلق)</td>
+                </tr>
+            </table>
+            
+            <h3 data-ar="القاعدة المستخلصة" data-en="Derived Rule">القاعدة المستخلصة</h3>
+            
+            <div class="success-box">
+                <p data-ar="حذف الألف من الكلمات المفتاحية يدل على الجمع والحفظ في الأصل السماوي، بينما إثباتها يدل على التفصيل والإنزال المفرق." 
+                   data-en="The deletion of Alif from key words indicates collection and preservation in the heavenly origin, while its retention indicates detailing and gradual descent.">
+                    حذف الألف من الكلمات المفتاحية يدل على الجمع والحفظ في الأصل السماوي، بينما إثباتها يدل على التفصيل والإنزال المفرق.
+                </p>
+            </div>
+            
+            <a href="#contents" class="back-to-top" data-ar="↑ العودة إلى الفهرس" data-en="↑ Back to Contents">↑ العودة إلى الفهرس</a>
+        </section>
+
+        <!-- القسم 6 -->
+        <section id="s6">
+            <h2 data-ar="٦. الخلاصة النهائية الشاملة" data-en="6. Comprehensive Final Conclusion">٦. الخلاصة النهائية الشاملة</h2>
+            
+            <div class="miracle-box">
+                <h3 data-ar="القواعد النهائية" data-en="Final Rules">القواعد النهائية</h3>
+                <ol>
+                    <li data-ar="الفعل أَنزَلَ (إفعال) يدل على الإنزال جملة واحدة، ويتوافق مع الرقم ١ في ١٢ موضعاً." 
+                        data-en="The verb Anzala (Form IV) indicates sending down all at once, corresponding to the number 1 in 12 occurrences.">
+                        الفعل أَنزَلَ (إفعال) يدل على الإنزال جملة واحدة، ويتوافق مع الرقم ١ في ١٢ موضعاً.
+                    </li>
+                    <li data-ar="الفعل نَزَّلَ (تفعيل) يدل على التنزيل تدريجياً، ويتوافق مع الرقم ٢٣ في ٣ مواضع." 
+                        data-en="The verb Nazzala (Form II) indicates gradual revelation, corresponding to the number 23 in 3 occurrences.">
+                        الفعل نَزَّلَ (تفعيل) يدل على التنزيل تدريجياً، ويتوافق مع الرقم ٢٣ في ٣ مواضع.
+                    </li>
+                    <li data-ar="التتالي القريب جداً لكلمتي 'قرآن' في يوسف (٢-٣) يُظهر إعجازاً مذهلاً: الفرق بينهما حرف واحد فقط." 
+                        data-en="The extremely close consecutiveness of the two 'Quran' words in Yusuf (2-3) demonstrates an astonishing miracle: the difference between them is just one letter.">
+                        التتالي القريب جداً لكلمتي 'قرآن' في يوسف (٢-٣) يُظهر إعجازاً مذهلاً: الفرق بينهما حرف واحد فقط.
+                    </li>
+                    <li data-ar="الآية ٢: 'قُرْءنًا' بحذف الألف، متناغمة مع الزخرف ٣ (الإنزال الجملة)." 
+                        data-en="Verse 2: 'Quranan' with Alif deleted, harmonized with Az-Zukhruf 3 (all-at-once descent).">
+                        الآية ٢: 'قُرْءنًا' بحذف الألف، متناغمة مع الزخرف ٣ (الإنزال الجملة).
+                    </li>
+                    <li data-ar="الآية ٣: 'الْقُرْآنَ' بإثبات الألف، متناغمة مع باقي القرآن (الوحي التدريجي)." 
+                        data-en="Verse 3: 'Al-Qur'an' with Alif retained, harmonized with rest of Quran (gradual revelation).">
+                        الآية ٣: 'الْقُرْآنَ' بإثبات الألف، متناغمة مع باقي القرآن (الوحي التدريجي).
+                    </li>
+                    <li data-ar="الاحتمال الإحصائي أقل من ١ في ٣١٧، مما يؤكد أن التصميم مقصود وليس مصادفة." 
+                        data-en="The statistical probability is less than 1 in 317, confirming that the design is intentional and not coincidence.">
+                        الاحتمال الإحصائي أقل من ١ في ٣١٧، مما يؤكد أن التصميم مقصود وليس مصادفة.
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="success-box">
+                <strong data-ar="التوصية النهائية:" data-en="Final Recommendation:">التوصية النهائية:</strong>
+                <p data-ar="حرف الألف البسيط المجرد، الذي يُشكّل قريباً من سدس حروف القرآن، هو المعجزة الكبرى الخفية التي لم تُفصل من قبل، وبحاجة إلى دراسة مستفيضة وبحث مستقل، خاصة لطائف الرسم العثماني." 
+                   data-en="The simple abstract letter Alif, which constitutes nearly one-sixth of Quranic letters, is the great hidden miracle that has never been detailed before, and requires extensive study and independent research, especially regarding the subtleties of Uthmani script.">
+                    حرف الألف البسيط المجرد، الذي يُشكّل قريباً من سدس حروف القرآن، هو المعجزة الكبرى الخفية التي لم تُفصل من قبل، وبحاجة إلى دراسة مستفيضة وبحث مستقل، خاصة لطائف الرسم العثماني.
+                </p>
+            </div>
+            
+            <a href="#contents" class="back-to-top" data-ar="↑ العودة إلى الفهرس" data-en="↑ Back to Contents">↑ العودة إلى الفهرس</a>
+        </section>
+
+        <footer>
+            <p data-ar="© 2026 - بحث أكاديمي في الدراسات القرآنية" data-en="© 2026 - Academic Research in Quranic Studies">© 2026 - بحث أكاديمي في الدراسات القرآنية</p>
+            <p data-ar="الإعجاز في الرسم العثماني والأفعال القرآنية" data-en="The Miracle of Uthmani Script and Quranic Verbs">الإعجاز في الرسم العثماني والأفعال القرآنية</p>
+        </footer>
+    </div>
+
+    <script>
+        var isArabic = true;
+        
+        function switchLang() {
+            isArabic = !isArabic;
+            
+            document.documentElement.lang = isArabic ? 'ar' : 'en';
+            document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+            document.getElementById('langBtn').textContent = isArabic ? '🌐 English' : '🌐 عربي';
+            
+            var elements = document.querySelectorAll('[data-ar][data-en]');
+            for (var i = 0; i < elements.length; i++) {
+                var el = elements[i];
+                var text = isArabic ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                if (text) {
+                    el.textContent = text;
+                }
+            }
+            
+            document.title = isArabic 
+                ? 'الإعجاز في الرسم العثماني والأفعال القرآنية' 
+                : 'The Miracle of Uthmani Script and Quranic Verbs';
+        }
+    </script>
+</body>
+</html>
